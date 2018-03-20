@@ -1,0 +1,14 @@
+{
+  "name": "shoppinglist",
+  "version": "1.0.0",
+  "description": "shopping list selectron JS app",
+  "main": "main.js",
+  "scripts":{
+    "start":"electron ."
+  },
+  "author": "NickZack",
+  "license": "MIT",
+  "dependencies": {
+    "electron": "^1.8.4"
+  }
+}

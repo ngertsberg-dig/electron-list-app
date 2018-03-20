@@ -1,0 +1,32 @@
+li:hover{
+  cursor:pointer;
+
+}
+li{
+  list-style:none;
+  font-size:25px;
+  font-family:monospace;
+  border-bottom:1px solid black;
+  width:100%;
+  float:left;
+}
+.deletePrompt{
+    background-color:rgba(255, 0, 0,0.5);
+}
+.collection .collection-item{
+  background-color:transparent !important;;
+}
+h1 {
+    font-size: 50px;
+    font-family: monospace;
+    width: 100%;
+    margin: 0px;
+    padding: 0px;
+    background-color: rgba(255, 0, 0, 0.5);
+    text-align: center;
+    border-bottom: 1px solid black;
+}
+
+body {
+    margin: 0px;
+}

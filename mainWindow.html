@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang = 'en'>
+<head>
+  <title>Shopping List</title>
+  <!-- JQUERY IMPORT FOR ELECTRON -->
+  <script>if (typeof module === 'object') {window.module = module; module = undefined;}</script>
+  <!-- normal script imports etc  -->
+  <script src="scripts/jquery.min.js"></script>
+  <!-- Insert this line after script imports -->
+  <script>if (window.module) module = window.module;</script>
+
+
+
+      <link href = "stylesheet.css" rel = "stylesheet">
+</head>
+<body>
+<h1> List App</h1>
+
+<ul>
+
+</ul>
+
+<script>
+const electron = require('electron');
+const {ipcRenderer} = electron;
+const ul = $("ul");
+
+ipcRenderer.on('item:add',function(e,item){
+
+  $("ul").append("<li>" + item + "</li>");
+
+});
+
+//get clear order from main JS
+ipcRenderer.on('item:clear',function(){
+  $("ul").empty();
+});
+
+$("ul").click(function(event){
+  var clickedItem = event.target;
+  if(!$(clickedItem).hasClass("deletePrompt")){
+    $(clickedItem).addClass("deletePrompt");
+
+  }
+  else{
+    $(clickedItem).remove();
+  }
+})
+
+</script>
+
+<script>
+
+// //DELETE PROMPT script
+//
+// function checkIfClick(){
+// $("li").click(function(){
+// if(!$(this).hasClass("deletePrompt")){  //TOGGLE RED WARNIN ON AND OFF
+// $(this).addClass("deletePrompt");
+// }
+// else{
+// $(this).remove();
+// }
+// });
+// }
+// setInterval(checkIfClick,1);
+</script>
+
+</body>
+</html>
